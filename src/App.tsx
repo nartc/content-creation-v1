@@ -1,28 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from 'react';
+import { Editor } from './components/Editor/Editor';
+import { CanvasContext, EditorContext, useCanvasContext, useEditorContext } from './contexts';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+interface IAppProps {
+  workareaWidth?: number;
+  workareaHeight?: number;
 }
+
+const App: FC<IAppProps> = ({ workareaWidth = 600, workareaHeight = 400 }) => {
+  /**
+   * Setup EditorContext State
+   */
+  const { ctxState, dispatch } = useEditorContext(workareaWidth, workareaHeight);
+
+  /**
+   * Setup Canvas Context State
+   */
+  const { canvasCtxState, dispatch: canvasDispatch } = useCanvasContext(ctxState);
+
+  return (
+    <EditorContext.Provider value={{ state: ctxState, dispatch }}>
+      <CanvasContext.Provider value={{ state: canvasCtxState, dispatch: canvasDispatch }}>
+        <Editor/>
+      </CanvasContext.Provider>
+    </EditorContext.Provider>
+  );
+};
 
 export default App;

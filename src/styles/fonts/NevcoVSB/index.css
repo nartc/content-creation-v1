@@ -1,0 +1,9 @@
+/* NevcoVSB */
+@font-face {
+    font-family: 'Nevco VSB';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./NevcoVSB.ttf'); /* IE9 Compat Modes */
+    src: local('Nevco VSB Regular'), local('NevcoVSB-Regular'),
+    url('./NevcoVSB.ttf') format('truetype');
+}

@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3805d609-9eda-4199-8ef1-19382ee94753" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/chautran.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-overrides.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ant-icons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Contents/ContentsDrawer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Common/FillTool.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Common/OpacityTool.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Common/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Image/Cropping.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Image/ImageTools.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Image/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Text/FontTool.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Text/TextHighlightTool.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Text/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Workarea/BackgroundWithOpacity.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Workarea/CanvasSize.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Workarea/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/DynamicTools.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/Alignment.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/Flip.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/GroupObject.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/Layer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/StaticTools.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/ToolsDrawer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Editor.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/EditorFooter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/EditorSideMenu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Editor/Workarea/EditorWorkarea.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contexts/CanvasContext.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contexts/EditorContext.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contexts/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/defaultTheme.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/Fonts.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/aligning/horizontal-bottom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/aligning/horizontal-center.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/aligning/horizontal-top.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/aligning/vertical-center.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/aligning/vertical-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/aligning/vertical-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/flip/flip-horizontal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/flip/flip-vertical.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/image/crop.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/image/set-background.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/layer/bring-forward.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/layer/bring-to-front.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/layer/send-backward.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/layer/send-to-back.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/fonts/NevcoVSB/NevcoVSB.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/fonts/NevcoVSB/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/fonts/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/arePropsEqual.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/fabric/Arrow.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/fabric/CanvasHandler.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/fabric/FabricObjectBuilder.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/fabric/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ui/Ant/ToolWrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ui/Ant/TooltipWrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ui/Ant/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ui/Flex/FlexBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ui/Flex/FlexItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ui/Flex/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ui/Notification/Info.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ui/Notification/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ui/Styled/FullWidthSlider.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ui/Styled/StyledDivider.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ui/Styled/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ui/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Image/ImageTools.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/DynamicTools.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="101" column="10" lean-forward="true" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/StaticTools.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Editor/Workarea/EditorWorkarea.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="445">
+              <caret line="159" column="49" lean-forward="true" selection-start-line="159" selection-start-column="49" selection-end-line="159" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Image/Cropping.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Image/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/contexts/CanvasContext.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="44" column="31" lean-forward="true" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/utils/fabric/CanvasHandler.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="115" column="5" lean-forward="true" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+                <marker date="1553899186279" expanded="true" signature="12399:13520" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/fabric/FabricObjectBuilder.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="423">
+              <caret line="47" column="6" lean-forward="true" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ActiveSelection</find>
+      <find>lock</find>
+      <find>.type</find>
+      <find>IMatri</find>
+      <find>IMatrix</find>
+      <find>viewportTransform</find>
+      <find>border</find>
+      <find>console.log</find>
+      <find>resetWorkareaDimension</find>
+      <find>zoom</find>
+      <find>removeWithUpdate</find>
+      <find>getActiveGroup</find>
+      <find>ActiveS</find>
+      <find>useRef</find>
+      <find>SET_IS_WORKAREA_BACKGROUND_MODIFIED</find>
+      <find>console.lo</find>
+      <find>SET_CANVAS_HANDLER</find>
+      <find>CLEAR_SELECTION</find>
+      <find>const</find>
+      <find>workareaBack</find>
+      <find>removeOb</find>
+      <find>delete</find>
+      <find>getObjects('image</find>
+      <find>.find</find>
+      <find>setSele</find>
+      <find>cropping</find>
+      <find>SET_IS_WORKAREA_BACKGROUND_MODIFIE</find>
+      <find>ex</find>
+      <find>ex:</find>
+      <find>ey:</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/utils/ui/Styled/FullWidthSlider.tsx" />
+        <option value="$PROJECT_DIR$/src/utils/ui/Styled/index.ts" />
+        <option value="$PROJECT_DIR$/src/utils/ui/Notification/index.ts" />
+        <option value="$PROJECT_DIR$/src/index.tsx" />
+        <option value="$PROJECT_DIR$/src/utils/ui/Notification/Info.ts" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/utils/ui/index.ts" />
+        <option value="$PROJECT_DIR$/src/utils/ui/Ant/index.ts" />
+        <option value="$PROJECT_DIR$/src/utils/ui/Ant/TooltipWrapper.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/CanvasSize.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/TextHighlightTool.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/OpacityTool.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/FontTool.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/ToolsDrawer.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/FillTool.tsx" />
+        <option value="$PROJECT_DIR$/src/utils/arePropsEqual.ts" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/index.ts" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Common/index.ts" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Text/index.ts" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Workarea/index.ts" />
+        <option value="$PROJECT_DIR$/src/App.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Editor.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/EditorSideMenu.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/EditorFooter.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Contents/ContentsDrawer.tsx" />
+        <option value="$PROJECT_DIR$/src/contexts/EditorContext.ts" />
+        <option value="$PROJECT_DIR$/src/constants.ts" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/Flip.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Text/FontTool.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/Layer.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/Alignment.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Text/TextHighlightTool.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Common/FillTool.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Workarea/CanvasSize.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Common/OpacityTool.tsx" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/index.css" />
+        <option value="$PROJECT_DIR$/config-overrides.js" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Workarea/BackgroundWithOpacity.tsx" />
+        <option value="$PROJECT_DIR$/src/ant-icons.js" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/GroupObject.tsx" />
+        <option value="$PROJECT_DIR$/src/utils/ui/Ant/ToolWrapper.tsx" />
+        <option value="$PROJECT_DIR$/src/utils/fabric/FabricObjectBuilder.ts" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Image/Cropping.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Image/index.ts" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/StaticTools.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Image/ImageTools.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/DynamicTools.tsx" />
+        <option value="$PROJECT_DIR$/src/contexts/CanvasContext.ts" />
+        <option value="$PROJECT_DIR$/src/components/Editor/Workarea/EditorWorkarea.tsx" />
+        <option value="$PROJECT_DIR$/src/utils/fabric/CanvasHandler.ts" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="68" />
+    <option name="y" value="39" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Editor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Editor" type="462c0819:PsiDirectoryNode" />
+              <item name="Drawers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Editor" type="462c0819:PsiDirectoryNode" />
+              <item name="Drawers" type="462c0819:PsiDirectoryNode" />
+              <item name="Tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Editor" type="462c0819:PsiDirectoryNode" />
+              <item name="Drawers" type="462c0819:PsiDirectoryNode" />
+              <item name="Tools" type="462c0819:PsiDirectoryNode" />
+              <item name="Dynamic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Editor" type="462c0819:PsiDirectoryNode" />
+              <item name="Drawers" type="462c0819:PsiDirectoryNode" />
+              <item name="Tools" type="462c0819:PsiDirectoryNode" />
+              <item name="Dynamic" type="462c0819:PsiDirectoryNode" />
+              <item name="Image" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Editor" type="462c0819:PsiDirectoryNode" />
+              <item name="Drawers" type="462c0819:PsiDirectoryNode" />
+              <item name="Tools" type="462c0819:PsiDirectoryNode" />
+              <item name="Static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Editor" type="462c0819:PsiDirectoryNode" />
+              <item name="Workarea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="contexts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="icons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="content-creation-v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="content-creation-v1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="icons" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Common" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Common" />
+      <recent name="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Text" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/ToolWrapper.tsx" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Workarea" />
+      <recent name="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Common" />
+      <recent name="$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Text" />
+      <recent name="$PROJECT_DIR$/src/utils/ui/Ant" />
+      <recent name="$PROJECT_DIR$/src/components/Editor" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3805d609-9eda-4199-8ef1-19382ee94753" name="Default Changelist" comment="" />
+      <created>1553182367983</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553182367983</updated>
+      <workItem from="1553182369234" duration="26638000" />
+      <workItem from="1553286386161" duration="334000" />
+      <workItem from="1553287348276" duration="1268000" />
+      <workItem from="1553353948564" duration="8279000" />
+      <workItem from="1553482556975" duration="337000" />
+      <workItem from="1553482913903" duration="591000" />
+      <workItem from="1553525069910" duration="17286000" />
+      <workItem from="1553559708032" duration="9000" />
+      <workItem from="1553611213671" duration="20184000" />
+      <workItem from="1553698114594" duration="373000" />
+      <workItem from="1553699064056" duration="24381000" />
+      <workItem from="1553783013261" duration="20923000" />
+      <workItem from="1553871074588" duration="16718000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="137321000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25971222" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32897383" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32923833" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="TypeScript" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.24457832" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Nativescript Palette" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ui/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ui/Ant/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/antd/lib/tooltip/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ui/Ant/TooltipWrapper.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es2015.core.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="92" column="10" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/lodash.isequal/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/arePropsEqual.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Common/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Text/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Workarea/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react-color/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ui/Flex/FlexBox.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/EditorSideMenu.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/EditorFooter.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Contents/ContentsDrawer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="2" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/contexts/EditorContext.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="55" column="2" lean-forward="true" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/Flip.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Text/TextHighlightTool.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Common/FillTool.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/Layer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Text/FontTool.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="877" column="13" selection-start-line="877" selection-start-column="13" selection-end-line="877" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Editor.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="5157" column="4" selection-start-line="5157" selection-start-column="4" selection-end-line="5157" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Workarea/CanvasSize.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Common/OpacityTool.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ui/Styled/StyledDivider.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="54" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/ToolsDrawer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-overrides.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/antd/lib/select/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ant-icons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Workarea/BackgroundWithOpacity.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/GroupObject.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="72" column="31" lean-forward="true" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Static/Alignment.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ui/Ant/ToolWrapper.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="112" column="17" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/fabric/FabricObjectBuilder.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="47" column="6" lean-forward="true" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Image/ImageTools.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/StaticTools.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/DynamicTools.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="101" column="10" lean-forward="true" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/contexts/CanvasContext.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="44" column="31" lean-forward="true" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Image/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Drawers/Tools/Dynamic/Image/Cropping.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/fabric/fabric-impl.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2844" column="5" selection-start-line="2844" selection-start-column="5" selection-end-line="2844" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editor/Workarea/EditorWorkarea.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="159" column="49" lean-forward="true" selection-start-line="159" selection-start-column="49" selection-end-line="159" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/fabric/CanvasHandler.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="115" column="5" lean-forward="true" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1553899186279" expanded="true" signature="12399:13520" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

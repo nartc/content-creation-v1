@@ -1,0 +1,11 @@
+export { default as DownOutline } from '@ant-design/icons/lib/outline/DownOutline';
+export { default as LockOutline } from '@ant-design/icons/lib/outline/LockOutline';
+export { default as UnlockOutline } from '@ant-design/icons/lib/outline/UnlockOutline';
+export { default as DeleteOutline } from '@ant-design/icons/lib/outline/DeleteOutline';
+export { default as UploadOutline } from '@ant-design/icons/lib/outline/UploadOutline';
+export { default as SettingOutline } from '@ant-design/icons/lib/outline/SettingOutline';
+export { default as PieChartOutline } from '@ant-design/icons/lib/outline/PieChartOutline';
+export { default as DesktopOutline } from '@ant-design/icons/lib/outline/DesktopOutline';
+export { default as InfoCircleOutline } from '@ant-design/icons/lib/outline/InfoCircleOutline';
+export { default as ZoomInOutline } from '@ant-design/icons/lib/outline/ZoomInOutline';
+export { default as ZoomOutOutline } from '@ant-design/icons/lib/outline/ZoomOutOutline';
