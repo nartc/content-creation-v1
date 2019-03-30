@@ -1,10 +1,10 @@
+import { CanvasContext, EditorContext } from '@contexts/index';
+import { FabricObjectBuilder } from '@utils/fabric';
 import { Layout } from 'antd';
 import { fabric } from 'fabric';
 import React, { FC, MutableRefObject, useContext, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { defaultCanvasOptions, defaultWorkareaOptions } from '../../../constants';
-import { CanvasContext, EditorContext } from '@contexts/index';
-import { FabricObjectBuilder } from '@utils/fabric';
 
 const StyledLayoutContent = styled(Layout.Content)`
   background-color: #f0f2f4;
@@ -59,7 +59,7 @@ export const EditorWorkarea: FC = () => {
     } else {
       editorCtxState.fabricCanvas.setWidth(editorCtxState.canvasWidth).setHeight(editorCtxState.canvasHeight);
       const scaleRatio = canvasCtxState.canvasHandler.calculateScaleRatio(600, 400);
-      canvasCtxDispatcher({type: "SET_SCALE_FACTOR", payload: {scaleFactor: scaleRatio}});
+      canvasCtxDispatcher({ type: 'SET_SCALE_FACTOR', payload: { scaleFactor: scaleRatio } });
       canvasCtxState.canvasHandler.resetWorkareaDimension(600, 400, scaleRatio);
       editorCtxDispatcher({ type: 'SET_FABRIC_CANVAS', payload: { fabricCanvas: editorCtxState.fabricCanvas } });
       setupFabricListeners();

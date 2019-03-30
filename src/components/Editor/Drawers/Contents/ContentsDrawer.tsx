@@ -1,6 +1,6 @@
+import { arePropsEqual } from '@utils/arePropsEqual';
 import { Layout } from 'antd';
 import React, { FC, memo } from 'react';
-import { arePropsEqual } from '@utils/arePropsEqual';
 
 interface IContentsDrawerProps {
   isOpened: boolean;

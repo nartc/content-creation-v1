@@ -1,9 +1,9 @@
+import { arePropsEqual } from '@utils/arePropsEqual';
+import { IToolWithProps, ToolWrapper } from '@utils/ui';
 import { Button, Popover } from 'antd';
 import { fabric } from 'fabric';
 import React, { FC, memo } from 'react';
 import { ColorResult, SketchPicker } from 'react-color';
-import { arePropsEqual } from '@utils/arePropsEqual';
-import { IToolWithProps, ToolWrapper } from '@utils/ui';
 
 interface ITextHighlightToolProps extends IToolWithProps {
   textBackgroundColor: string;

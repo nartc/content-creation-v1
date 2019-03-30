@@ -1,7 +1,7 @@
-import { fabric } from 'fabric';
 import { FabricObjectBuilder } from '@utils/fabric/FabricObjectBuilder';
-import {twoDecimals} from '@utils/math/two-decimal';
-import {defaultCroppingRectOptions} from "../../constants";
+import { twoDecimals } from '@utils/math/two-decimal';
+import { fabric } from 'fabric';
+import { defaultCroppingRectOptions } from '../../constants';
 
 export type AlignmentType = 'left' | 'right' | 'bottom' | 'top' | 'vertical' | 'horizontal';
 export type LayerType = 'forward' | 'backward' | 'front' | 'back';
@@ -37,10 +37,10 @@ export class CanvasHandler {
   }
 
   setCroppingRectAfterModifed = (rect: fabric.Rect) => {
-      this.croppingRectAfterModifed = null;
-      rect.clone(cloned => {
-         this.croppingRectAfterModifed = cloned;
-      });
+    this.croppingRectAfterModifed = null;
+    rect.clone(cloned => {
+      this.croppingRectAfterModifed = cloned;
+    });
   };
 
   calculateScaleRatio = (newWidth: number, newHeight: number) => {
@@ -122,41 +122,41 @@ export class CanvasHandler {
     const { left: objectLeft, top: objectTop, width: objectWidth, height: objectHeight } = this.activeObject.getBoundingRect(true, true);
 
 
-    const {left: rectLeft, top: rectTop } = this.croppingRectAfterModifed;
+    const { left: rectLeft, top: rectTop } = this.croppingRectAfterModifed;
     const originalRight = rectLeft + this.croppingRectAfterModifed.getScaledWidth();
     const originalBottom = rectTop + this.croppingRectAfterModifed.getScaledHeight();
 
     if (isMoving) {
-        this.activeObject.set('left', Math.min(Math.max(left, objectLeft), left + width - objectWidth));
-        this.activeObject.set('top', Math.min(Math.max(top, objectTop), top + height - objectHeight));
+      this.activeObject.set('left', Math.min(Math.max(left, objectLeft), left + width - objectWidth));
+      this.activeObject.set('top', Math.min(Math.max(top, objectTop), top + height - objectHeight));
     }
 
     if (isScaling) {
-        if (twoDecimals(objectLeft) < twoDecimals(left)) {
-            this.activeObject.set({
-                left,
-                scaleX: (originalRight - left) / this.activeObject.width
-            });
-        }
+      if (twoDecimals(objectLeft) < twoDecimals(left)) {
+        this.activeObject.set({
+          left,
+          scaleX: (originalRight - left) / this.activeObject.width
+        });
+      }
 
-        if (twoDecimals(objectTop) < twoDecimals(top)) {
-            this.activeObject.set({
-                top,
-                scaleY: (originalBottom - top) / this.activeObject.height
-            });
-        }
+      if (twoDecimals(objectTop) < twoDecimals(top)) {
+        this.activeObject.set({
+          top,
+          scaleY: (originalBottom - top) / this.activeObject.height
+        });
+      }
 
-        if (twoDecimals(objectWidth ) > twoDecimals(left + width - objectLeft)) {
-            this.activeObject.set({
-                scaleX: (left + width - objectLeft) / this.activeObject.width
-            });
-        }
+      if (twoDecimals(objectWidth) > twoDecimals(left + width - objectLeft)) {
+        this.activeObject.set({
+          scaleX: (left + width - objectLeft) / this.activeObject.width
+        });
+      }
 
-        if (twoDecimals(objectHeight) > twoDecimals(top + height - objectTop)) {
-            this.activeObject.set({
-                scaleY: (top + height - objectTop) / this.activeObject.height
-            });
-        }
+      if (twoDecimals(objectHeight) > twoDecimals(top + height - objectTop)) {
+        this.activeObject.set({
+          scaleY: (top + height - objectTop) / this.activeObject.height
+        });
+      }
     }
 
     this.render(true);

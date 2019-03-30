@@ -1,12 +1,12 @@
-import { Layout } from 'antd';
-import React, { FC, useContext, useState } from 'react';
-import styled from 'styled-components';
-import { EditorContext } from '@contexts/EditorContext';
 import { ContentsDrawer } from '@components/Editor/Drawers/Contents/ContentsDrawer';
 import { ToolsDrawer } from '@components/Editor/Drawers/Tools/ToolsDrawer';
 import { EditorFooter } from '@components/Editor/EditorFooter';
 import { EditorSideMenu } from '@components/Editor/EditorSideMenu';
 import { EditorWorkarea } from '@components/Editor/Workarea/EditorWorkarea';
+import { EditorContext } from '@contexts/EditorContext';
+import { Layout } from 'antd';
+import React, { FC, useContext, useState } from 'react';
+import styled from 'styled-components';
 
 const StyledLayout = styled(Layout)`
   min-height: 100vh;

@@ -1,7 +1,7 @@
+import { IEditorContextState } from '@contexts/EditorContext';
+import { CanvasHandler, FabricObjectBuilder } from '@utils/fabric/index';
 import { fabric } from 'fabric';
 import { createContext, Dispatch, ReducerAction, useReducer } from 'react';
-import { CanvasHandler, FabricObjectBuilder } from '@utils/fabric/index';
-import { IEditorContextState } from '@contexts/EditorContext';
 
 export interface ICanvasContextState {
   canvasHandler: CanvasHandler;

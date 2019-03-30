@@ -1,11 +1,11 @@
-import React, { FC, memo } from 'react';
-import { ReactComponent as BringForward } from '../../../../../icons/layer/bring-forward.svg';
-import { ReactComponent as BringToFront } from '../../../../../icons/layer/bring-to-front.svg';
-import { ReactComponent as SendBackward } from '../../../../../icons/layer/send-backward.svg';
-import { ReactComponent as SendToBack } from '../../../../../icons/layer/send-to-back.svg';
+import { ReactComponent as BringForward } from '@customIcons/layer/bring-forward.svg';
+import { ReactComponent as BringToFront } from '@customIcons/layer/bring-to-front.svg';
+import { ReactComponent as SendBackward } from '@customIcons/layer/send-backward.svg';
+import { ReactComponent as SendToBack } from '@customIcons/layer/send-to-back.svg';
 import { arePropsEqual } from '@utils/arePropsEqual';
 import { LayerType } from '@utils/fabric';
 import { IToolWithProps, ToolIcon, ToolWrapper } from '@utils/ui';
+import React, { FC, memo } from 'react';
 
 interface ILayerToolsProps extends IToolWithProps {
   shouldDisabled: boolean;

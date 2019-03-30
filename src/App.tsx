@@ -1,6 +1,6 @@
+import { Editor } from '@components/Editor/Editor';
+import { CanvasContext, EditorContext, useCanvasContext, useEditorContext } from '@contexts/index';
 import React, { FC } from 'react';
-import { Editor } from './components/Editor/Editor';
-import { CanvasContext, EditorContext, useCanvasContext, useEditorContext } from './contexts';
 
 interface IAppProps {
   workareaWidth?: number;

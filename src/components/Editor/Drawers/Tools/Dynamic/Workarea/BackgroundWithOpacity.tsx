@@ -1,12 +1,12 @@
+import { CanvasContext, EditorContext } from '@contexts/index';
+import { FabricObjectBuilder } from '@utils/fabric';
+import { displayInfo, FlexBox, FullWidthSlider, ToolWrapper } from '@utils/ui';
 import { Button, Popover, Select, Typography, Upload } from 'antd';
 import { SliderValue } from 'antd/lib/slider';
 import { UploadChangeParam } from 'antd/lib/upload';
 import React, { FC, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { ChromePicker, ColorResult } from 'react-color';
 import styled from 'styled-components';
-import {CanvasContext, EditorContext} from '@contexts/index';
-import { FabricObjectBuilder } from '@utils/fabric';
-import { ToolWrapper, FlexBox, displayInfo, FullWidthSlider  } from '@utils/ui';
 
 const StyledSelect = styled(Select)<{ marginLeft: string | number }>`
   margin-left: ${props => `${props.marginLeft} !important`};
@@ -28,14 +28,17 @@ const useFileReaderEffect = (onLoadCallback: (event: ProgressEvent) => void) => 
 export const BackgroundWithOpacityTool: FC = () => {
   const [backgroundType, setBackgroundType] = useState('solid');
   const { state: { canvasHandler, workareaBackgroundColor, workareaOpacity }, dispatch: canvasCtxDispatcher } = useContext(CanvasContext);
-  const {dispatch: editorCtxDispatcher} = useContext(EditorContext);
+  const { dispatch: editorCtxDispatcher } = useContext(EditorContext);
 
   const onLoadBackgroundImageHandler = (event: ProgressEvent) => {
     FabricObjectBuilder().image(event.target['result'], {}, image => {
       const { width, height } = image;
       const scaleRatio = canvasHandler.calculateScaleRatio(width, height);
       canvasCtxDispatcher({ type: 'SET_SCALE_FACTOR', payload: { scaleFactor: scaleRatio } });
-      editorCtxDispatcher({type: 'SET_WORKAREA_DIMENSION', payload: {workareaWidth: width, workareaHeight: height}});
+      editorCtxDispatcher({
+        type: 'SET_WORKAREA_DIMENSION',
+        payload: { workareaWidth: width, workareaHeight: height }
+      });
       canvasHandler.addBackgroundImage(image, scaleRatio);
       displayInfo(`Resize to ${width}px x ${height}px`);
     });

@@ -1,7 +1,7 @@
+import { CanvasContext, EditorContext } from '@contexts/index';
+import { displayInfo, FlexBox, FlexItem, TooltipWrapper, ToolWrapper } from '@utils/ui';
 import { Input, Typography } from 'antd';
 import React, { FC, useContext, useMemo, useRef } from 'react';
-import { CanvasContext, EditorContext } from '@contexts/index';
-import { ToolWrapper, displayInfo, FlexBox, FlexItem, TooltipWrapper  } from '@utils/ui';
 
 export const CanvasSizeTools: FC = () => {
   const { state: { workareaWidth, workareaHeight }, dispatch: editorCtxDispatcher } = useContext(EditorContext);

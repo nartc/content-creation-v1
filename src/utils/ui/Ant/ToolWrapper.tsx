@@ -1,12 +1,12 @@
+import { ICanvasContextReducerActions, ICanvasContextState } from '@contexts/CanvasContext';
+import { CanvasHandler } from '@utils/fabric/CanvasHandler';
+import { TooltipWrapper } from '@utils/ui/Ant';
+import { FlexBox } from '@utils/ui/Flex';
 import { Icon, Typography } from 'antd';
 import { IconProps } from 'antd/lib/icon';
 import { TooltipPlacement } from 'antd/lib/tooltip';
 import React, { Dispatch, FC, ReducerAction, SVGProps } from 'react';
 import styled, { CSSObject } from 'styled-components';
-import { ICanvasContextReducerActions, ICanvasContextState } from '@contexts/CanvasContext';
-import { CanvasHandler } from '@utils/fabric/CanvasHandler';
-import { FlexBox } from '@utils/ui/Flex';
-import { TooltipWrapper } from '@utils/ui/Ant';
 
 const ToolTitle = styled(Typography.Text)`
   font-weight: bold;

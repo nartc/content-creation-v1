@@ -1,8 +1,8 @@
-import React, { FC, memo } from 'react';
 import { ReactComponent as Crop } from '@customIcons/image/crop.svg';
 import { ReactComponent as SetBackground } from '@customIcons/image/set-background.svg';
 import { arePropsEqual } from '@utils/arePropsEqual';
-import { FlexBox, IToolWithProps, ToolIcon, ToolWrapper  } from '@utils/ui';
+import { FlexBox, IToolWithProps, ToolIcon, ToolWrapper } from '@utils/ui';
+import React, { FC, memo } from 'react';
 
 interface IImageToolsProps extends IToolWithProps {
   shouldSetBackgroundDisabled: boolean;

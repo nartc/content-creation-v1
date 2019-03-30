@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC }   from 'react';
+import React, { CSSProperties, FC } from 'react';
 import { FlexAlignSelf, FlexElement } from './FlexBox';
 
 interface IFlexItemProps {

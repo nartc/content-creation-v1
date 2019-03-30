@@ -1,11 +1,11 @@
+import { Font, Fonts } from '@fonts/Fonts';
+import { arePropsEqual } from '@utils/arePropsEqual';
+import { FlexBox, FlexItem, IToolWithProps, ToolIcon, ToolWrapper } from '@utils/ui';
 import { Select, Slider, Typography } from 'antd';
 import { SliderValue } from 'antd/lib/slider';
 import { fabric } from 'fabric';
 import React, { FC, memo } from 'react';
 import styled from 'styled-components';
-import { Font, Fonts } from '@fonts/Fonts';
-import { arePropsEqual } from '@utils/arePropsEqual';
-import { FlexBox, FlexItem, IToolWithProps, ToolIcon, ToolWrapper } from '@utils/ui';
 
 interface ITextFontProps {
   fontFamily: string;
