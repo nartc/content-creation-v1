@@ -13,6 +13,7 @@ export class CanvasHandler {
   private initialViewportTransform = [1, 0, 0, 1, 0, 0];
   private workareaBackground: fabric.Image;
   private croppingRect: fabric.Rect;
+  private croppingRectAfterModifed: fabric.Rect;
 
   constructor(private fabricCanvas: fabric.Canvas, private _workarea: fabric.Rect) {
   }
@@ -31,6 +32,17 @@ export class CanvasHandler {
 
   set workarea(value: fabric.Rect) {
     this._workarea = value;
+  }
+
+  setCroppingRectAfterModifed(rect: fabric.Rect) {
+      this.croppingRectAfterModifed = null;
+      rect.clone(cloned => {
+         this.croppingRectAfterModifed = cloned;
+         this.croppingRectAfterModifed.set({
+             lockScalingY: true,
+             lockScalingX: true
+         });
+      });
   }
 
   calculateScaleRatio = (newWidth: number, newHeight: number) => {
@@ -86,6 +98,7 @@ export class CanvasHandler {
       scaleY: this._workarea.scaleY,
       opacity: 0.2,
       lockRotation: true,
+      lockScalingFlip: true,
       hasRotatingPoint: false,
       name: 'croppingRect'
     });
@@ -99,48 +112,58 @@ export class CanvasHandler {
     this.removeObject(this.croppingRect);
     this.workareaBackground.set('selectable', true);
     this.croppingRect = null;
+    this.croppingRectAfterModifed = null;
   };
 
   handleCroppingRectBoundings = (isScaling: boolean, isMoving: boolean) => {
     const { left, top, width, height } = this.workarea.getBoundingRect(true, true);
-    const { left: objectLeft, top: objectTop, width: objectWidth, height: objectHeight, scaleX, scaleY } = this.activeObject;
+    const { left: objectLeft, top: objectTop, width: objectWidth, height: objectHeight } = this.activeObject.getBoundingRect(true, true);
 
-    console.log({ left, top, width, height }, this.activeObject.getBoundingRect(true, true));
+    let originalRight: number,
+        originalBottom: number;
 
-    if (left > objectLeft) {
-      this.activeObject.set('left', left);
+    if (this.croppingRectAfterModifed) {
+        const {left, top} = this.croppingRectAfterModifed;
+        originalRight = left + this.croppingRectAfterModifed.getScaledWidth();
+        originalBottom = top + this.croppingRectAfterModifed.getScaledHeight();
     }
 
-    if (top > objectTop) {
-      this.activeObject.set('top', top);
+    if (isMoving) {
+        this.activeObject.set('left', Math.min(Math.max(left, objectLeft), left + width - objectWidth));
+        this.activeObject.set('top', Math.min(Math.max(top, objectTop), top + height - objectHeight));
     }
 
-    if (objectLeft > left + width - this.activeObject.getScaledWidth()) {
-      this.activeObject.set('left', left + width - this.activeObject.getScaledWidth());
+    if (isScaling) {
+        if (objectLeft < left) {
+            this.activeObject.set({
+                left,
+                width: originalRight - left,
+                scaleX: 1
+            });
+        }
 
-      if (isScaling) {
-        this.activeObject.set('width', left + width - objectLeft);
-      }
+        if (objectTop < top) {
+            this.activeObject.set({
+                top,
+                height: originalBottom - top,
+                scaleY: 1
+            });
+        }
+
+        if (objectWidth > left + width - objectLeft) {
+            this.activeObject.set({
+                width: left + width - objectLeft,
+                scaleX: 1
+            });
+        }
+
+        if (objectHeight > top + height - objectTop) {
+            this.activeObject.set({
+                height: top + height - objectTop,
+                scaleY: 1
+            });
+        }
     }
-
-    if (objectTop > top + height - (objectHeight * scaleY)) {
-      this.activeObject.set('top', top + height - (objectHeight * scaleY));
-      // if (isScaling) {
-      //   this.activeObject.set('height', objectHeight * scaleY);
-      // }
-    }
-
-    // if (objectLeft + (objectWidth * scaleX) > left + width) {
-    //
-    // }
-
-    // if (objectWidth * scaleX > width) {
-    //   this.activeObject.set('width', width);
-    // }
-    //
-    // if (objectHeight * scaleY > height) {
-    //   this.activeObject.set('height', height);
-    // }
 
     this.render(true);
   };

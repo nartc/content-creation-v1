@@ -133,6 +133,8 @@ export const EditorWorkarea: FC = () => {
         type: 'SET_IS_WORKAREA_BACKGROUND_MODIFIED',
         payload: { isWorkareaBackgroundModified: canvasCtxState.canvasHandler.isWorkareaBackgroundModified }
       });
+    } else if (target.name === 'croppingRect' && target.isType('rect')) {
+      canvasCtxState.canvasHandler.setCroppingRectAfterModifed(target as fabric.Rect);
     }
   };
 
@@ -145,17 +147,8 @@ export const EditorWorkarea: FC = () => {
   };
 
   const handleObjectScaling = (event: fabric.IEvent) => {
-    const { target } = event;
+    const { target, transform } = event;
     // Handle bounding rect for CroppingRect
-    // console.log({
-    //   event,
-    //   originalScaleX: event.transform.original.scaleX,
-    //   originalScaleY: event.transform.original.scaleY,
-    //   scaleX: event.target.scaleX,
-    //   scaleY: event.target.scaleY,
-    //   newScaleX: event.transform['newScaleX'],
-    //   newScaleY: event.transform['newScaleY'],
-    // });
     if (target.name === 'croppingRect' && target.isType('rect')) {
       canvasCtxState.canvasHandler.handleCroppingRectBoundings(true, false);
     }
