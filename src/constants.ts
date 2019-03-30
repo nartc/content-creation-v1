@@ -22,3 +22,12 @@ export const defaultWorkareaOptions = {
   padding: 0,
   strokeWidth: 0
 };
+
+export const defaultCroppingRectOptions = {
+  opacity: 0.2,
+  lockRotation: true,
+  lockScalingFlip: true,
+  hasRotatingPoint: false,
+  name: 'croppingRect',
+  strokeWidth: 0
+};

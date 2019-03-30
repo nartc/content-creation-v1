@@ -1,9 +1,8 @@
 import { Typography } from 'antd';
 import { SliderValue } from 'antd/lib/slider';
 import React, { FC, memo } from 'react';
-import { arePropsEqual } from '../../../../../../utils/arePropsEqual';
-import { FullWidthSlider, IToolWithProps } from '../../../../../../utils/ui';
-import { ToolWrapper } from '../../../../../../utils/ui/Ant';
+import { arePropsEqual } from '@utils/arePropsEqual';
+import { ToolWrapper, FullWidthSlider, IToolWithProps  } from '@utils/ui';
 
 interface IOpacityToolProps extends IToolWithProps {
   opacity: number;

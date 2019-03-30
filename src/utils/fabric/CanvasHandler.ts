@@ -1,5 +1,7 @@
 import { fabric } from 'fabric';
-import { FabricObjectBuilder } from './FabricObjectBuilder';
+import { FabricObjectBuilder } from '@utils/fabric/FabricObjectBuilder';
+import {twoDecimals} from '@utils/math/two-decimal';
+import {defaultCroppingRectOptions} from "../../constants";
 
 export type AlignmentType = 'left' | 'right' | 'bottom' | 'top' | 'vertical' | 'horizontal';
 export type LayerType = 'forward' | 'backward' | 'front' | 'back';
@@ -34,16 +36,12 @@ export class CanvasHandler {
     this._workarea = value;
   }
 
-  setCroppingRectAfterModifed(rect: fabric.Rect) {
+  setCroppingRectAfterModifed = (rect: fabric.Rect) => {
       this.croppingRectAfterModifed = null;
       rect.clone(cloned => {
          this.croppingRectAfterModifed = cloned;
-         this.croppingRectAfterModifed.set({
-             lockScalingY: true,
-             lockScalingX: true
-         });
       });
-  }
+  };
 
   calculateScaleRatio = (newWidth: number, newHeight: number) => {
     return Math.min((this.canvasWidth * .8) / newWidth, (this.canvasHeight * .8) / newHeight);
@@ -89,6 +87,7 @@ export class CanvasHandler {
       return;
     }
 
+    this.croppingRectAfterModifed = null;
     this.croppingRect = FabricObjectBuilder().rect(null, {
       top: this._workarea.top,
       left: this._workarea.left,
@@ -96,19 +95,22 @@ export class CanvasHandler {
       height: this._workarea.height,
       scaleX: this._workarea.scaleX,
       scaleY: this._workarea.scaleY,
-      opacity: 0.2,
-      lockRotation: true,
-      lockScalingFlip: true,
-      hasRotatingPoint: false,
-      name: 'croppingRect'
+      ...defaultCroppingRectOptions
     });
 
-    this.addObject(this.croppingRect);
-    this.fabricCanvas.setActiveObject(this.croppingRect);
-    this.workareaBackground.set('selectable', false);
+    this.croppingRect.clone(cloned => {
+      this.croppingRectAfterModifed = cloned;
+      this.addObject(this.croppingRect);
+      this.fabricCanvas.setActiveObject(this.croppingRect);
+      this.workareaBackground.set('selectable', false);
+    });
   };
 
   removeCroppingRect = () => {
+    if (!this.workareaBackground) {
+      return;
+    }
+
     this.removeObject(this.croppingRect);
     this.workareaBackground.set('selectable', true);
     this.croppingRect = null;
@@ -119,14 +121,10 @@ export class CanvasHandler {
     const { left, top, width, height } = this.workarea.getBoundingRect(true, true);
     const { left: objectLeft, top: objectTop, width: objectWidth, height: objectHeight } = this.activeObject.getBoundingRect(true, true);
 
-    let originalRight: number,
-        originalBottom: number;
 
-    if (this.croppingRectAfterModifed) {
-        const {left, top} = this.croppingRectAfterModifed;
-        originalRight = left + this.croppingRectAfterModifed.getScaledWidth();
-        originalBottom = top + this.croppingRectAfterModifed.getScaledHeight();
-    }
+    const {left: rectLeft, top: rectTop } = this.croppingRectAfterModifed;
+    const originalRight = rectLeft + this.croppingRectAfterModifed.getScaledWidth();
+    const originalBottom = rectTop + this.croppingRectAfterModifed.getScaledHeight();
 
     if (isMoving) {
         this.activeObject.set('left', Math.min(Math.max(left, objectLeft), left + width - objectWidth));
@@ -134,33 +132,29 @@ export class CanvasHandler {
     }
 
     if (isScaling) {
-        if (objectLeft < left) {
+        if (twoDecimals(objectLeft) < twoDecimals(left)) {
             this.activeObject.set({
                 left,
-                width: originalRight - left,
-                scaleX: 1
+                scaleX: (originalRight - left) / this.activeObject.width
             });
         }
 
-        if (objectTop < top) {
+        if (twoDecimals(objectTop) < twoDecimals(top)) {
             this.activeObject.set({
                 top,
-                height: originalBottom - top,
-                scaleY: 1
+                scaleY: (originalBottom - top) / this.activeObject.height
             });
         }
 
-        if (objectWidth > left + width - objectLeft) {
+        if (twoDecimals(objectWidth ) > twoDecimals(left + width - objectLeft)) {
             this.activeObject.set({
-                width: left + width - objectLeft,
-                scaleX: 1
+                scaleX: (left + width - objectLeft) / this.activeObject.width
             });
         }
 
-        if (objectHeight > top + height - objectTop) {
+        if (twoDecimals(objectHeight) > twoDecimals(top + height - objectTop)) {
             this.activeObject.set({
-                height: top + height - objectTop,
-                scaleY: 1
+                scaleY: (top + height - objectTop) / this.activeObject.height
             });
         }
     }
@@ -221,7 +215,7 @@ export class CanvasHandler {
     }
   };
 
-  centerWorkareaAndRender = () => {
+  private centerWorkareaAndRender = () => {
     this.fabricCanvas.centerObject(this._workarea);
     this.render();
   };
@@ -230,7 +224,7 @@ export class CanvasHandler {
     this.fabricCanvas.add(object);
   };
 
-  removeObject = (object: fabric.Object) => {
+  private removeObject = (object: fabric.Object) => {
     this.fabricCanvas.remove(object);
   };
 
@@ -247,7 +241,7 @@ export class CanvasHandler {
     this.render();
   };
 
-  render = (isRequested: boolean = false) => {
+  private render = (isRequested: boolean = false) => {
     if (isRequested) {
       this.fabricCanvas.requestRenderAll();
       return;
@@ -466,9 +460,7 @@ export class CanvasHandler {
     });
   };
 
-  /**
-   * Getters
-   */
+  // Getters
   private getActiveObject = <T extends fabric.Object = fabric.Object>() => {
     return this.fabricCanvas.getActiveObject() as T;
   };

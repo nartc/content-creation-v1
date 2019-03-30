@@ -1,9 +1,8 @@
 import React, { FC, memo } from 'react';
-import { ReactComponent as Crop } from '../../../../../../icons/image/crop.svg';
-import { ReactComponent as SetBackground } from '../../../../../../icons/image/set-background.svg';
-import { arePropsEqual } from '../../../../../../utils/arePropsEqual';
-import { IToolWithProps, ToolIcon, ToolWrapper } from '../../../../../../utils/ui/Ant';
-import { FlexBox } from '../../../../../../utils/ui/Flex';
+import { ReactComponent as Crop } from '@customIcons/image/crop.svg';
+import { ReactComponent as SetBackground } from '@customIcons/image/set-background.svg';
+import { arePropsEqual } from '@utils/arePropsEqual';
+import { FlexBox, IToolWithProps, ToolIcon, ToolWrapper  } from '@utils/ui';
 
 interface IImageToolsProps extends IToolWithProps {
   shouldSetBackgroundDisabled: boolean;

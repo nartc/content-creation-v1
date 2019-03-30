@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@utils/*": ["utils/*"],
+      "@utils/ui/*": ["utils/ui/*"],
+      "@utils/fabric/*": ["utils/fabric/*"],
+      "@utils/math/*": ["utils/math/*"],
+      "@customIcons/*": ["icons/*"],
+      "@fonts/*": ["fonts/*"],
+      "@contexts/*": ["contexts/*"],
+      "@components/*": ["components/*"]
+    }
+  }
+}

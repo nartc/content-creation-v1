@@ -1,9 +1,9 @@
 import React, { FC, memo } from 'react';
-import { ReactComponent as FlipHorizontal } from '../../../../../icons/flip/flip-horizontal.svg';
-import { ReactComponent as FlipVertical } from '../../../../../icons/flip/flip-vertical.svg';
-import { arePropsEqual } from '../../../../../utils/arePropsEqual';
-import { FlipType } from '../../../../../utils/fabric';
-import { IToolWithProps, ToolIcon, ToolWrapper } from '../../../../../utils/ui/Ant';
+import { ReactComponent as FlipHorizontal } from '@customIcons/flip/flip-horizontal.svg';
+import { ReactComponent as FlipVertical } from '@customIcons/flip/flip-vertical.svg';
+import { arePropsEqual } from '@utils/arePropsEqual';
+import { FlipType } from '@utils/fabric';
+import { IToolWithProps, ToolIcon, ToolWrapper } from '@utils/ui';
 
 interface IFlipToolsProps extends IToolWithProps {
   shouldDisabled: boolean;

@@ -1,8 +1,8 @@
 import { Icon, Layout } from 'antd';
-import React, { FC, useContext } from 'react';
+import React, {FC, useContext, useMemo} from 'react';
 import styled from 'styled-components';
-import { CanvasContext } from '../../contexts';
-import { FlexBox } from '../../utils/ui';
+import { CanvasContext } from '@contexts/CanvasContext';
+import { FlexBox } from '@utils/ui';
 
 const Footer = styled(Layout.Footer)`
   position: absolute;
@@ -16,6 +16,7 @@ const Footer = styled(Layout.Footer)`
 const FooterIcon = styled(Icon)`
   font-size: 18px;
   margin-right: 10px;
+  cursor: pointer;
 `;
 
 const FooterText = styled.span`
@@ -24,17 +25,22 @@ const FooterText = styled.span`
 `;
 
 export const EditorFooter: FC = () => {
-  const { state: { scaleFactor } } = useContext(CanvasContext);
+  const { state: { scaleFactor, canvasHandler }, dispatch: canvasCtxDispatcher } = useContext(CanvasContext);
 
-  return (
-    <Footer>
-      <FlexBox alignItems={'center'}
-               justifyContent={'space-between'}
-               style={{ padding: '5px 10px', width: 110, background: 'white', borderRadius: 10 }}>
-        <FooterIcon type={'zoom-out'}/>
-        <FooterText>{`${Math.round(scaleFactor * 100)}`}%</FooterText>
-        <FooterIcon type={'zoom-in'}/>
-      </FlexBox>
-    </Footer>
-  );
+  const onZoomClick = (delta: number) => () => {
+      canvasHandler.zoom(delta, canvasHandler.canvas.getVpCenter());
+      canvasCtxDispatcher({type: "SET_SCALE_FACTOR", payload: {scaleFactor: canvasHandler.zoomLevel}});
+  };
+
+  return useMemo(() => (
+      <Footer>
+          <FlexBox alignItems={'center'}
+                   justifyContent={'space-between'}
+                   style={{ padding: '5px 10px', width: 110, background: 'white', borderRadius: 10 }}>
+              <FooterIcon type={'zoom-out'} onClick={onZoomClick(-5)}/>
+              <FooterText>{`${Math.round(scaleFactor * 100)}`}%</FooterText>
+              <FooterIcon type={'zoom-in'} onClick={onZoomClick(5)}/>
+          </FlexBox>
+      </Footer>
+  ), [scaleFactor]);
 };

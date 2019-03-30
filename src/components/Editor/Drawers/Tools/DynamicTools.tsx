@@ -1,13 +1,13 @@
 import { fabric } from 'fabric';
 import React, { FC, ReactNode, useContext, useMemo } from 'react';
-import { CanvasContext } from '../../../../contexts';
-import { Fonts } from '../../../../fonts/Fonts';
-import { StyledDivider } from '../../../../utils/ui';
-import { FillTool, OpacityTool } from './Dynamic/Common';
-import { CroppingTools, ImageTools } from './Dynamic/Image';
-import { FontTool, TextHighlightTool } from './Dynamic/Text';
-import { CanvasSizeTools } from './Dynamic/Workarea';
-import { BackgroundWithOpacityTool } from './Dynamic/Workarea/BackgroundWithOpacity';
+import { CanvasContext } from '@contexts/CanvasContext';
+import { Fonts } from '@fonts/Fonts';
+import { StyledDivider } from '@utils/ui';
+import { FillTool, OpacityTool } from '@components/Editor/Drawers/Tools/Dynamic/Common';
+import { CroppingTools, ImageTools } from '@components/Editor/Drawers/Tools/Dynamic/Image';
+import { FontTool, TextHighlightTool } from '@components/Editor/Drawers/Tools/Dynamic/Text';
+import { CanvasSizeTools } from '@components/Editor/Drawers/Tools/Dynamic/Workarea';
+import { BackgroundWithOpacityTool } from '@components/Editor/Drawers/Tools/Dynamic/Workarea/BackgroundWithOpacity';
 
 export const DynamicTools: FC = () => {
   const {

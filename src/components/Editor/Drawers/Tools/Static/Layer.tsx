@@ -3,9 +3,9 @@ import { ReactComponent as BringForward } from '../../../../../icons/layer/bring
 import { ReactComponent as BringToFront } from '../../../../../icons/layer/bring-to-front.svg';
 import { ReactComponent as SendBackward } from '../../../../../icons/layer/send-backward.svg';
 import { ReactComponent as SendToBack } from '../../../../../icons/layer/send-to-back.svg';
-import { arePropsEqual } from '../../../../../utils/arePropsEqual';
-import { LayerType } from '../../../../../utils/fabric';
-import { IToolWithProps, ToolIcon, ToolWrapper } from '../../../../../utils/ui/Ant';
+import { arePropsEqual } from '@utils/arePropsEqual';
+import { LayerType } from '@utils/fabric';
+import { IToolWithProps, ToolIcon, ToolWrapper } from '@utils/ui';
 
 interface ILayerToolsProps extends IToolWithProps {
   shouldDisabled: boolean;

@@ -1,6 +1,6 @@
 import { Typography } from 'antd';
 import React, { FC } from 'react';
-import { ToolWrapper } from '../../../../../../utils/ui/Ant';
+import { ToolWrapper } from '@utils/ui';
 
 export const CroppingTools: FC = props => {
   return (

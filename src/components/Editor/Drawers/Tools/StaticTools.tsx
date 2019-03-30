@@ -1,7 +1,7 @@
 import React, { FC, useContext, useMemo } from 'react';
-import { CanvasContext } from '../../../../contexts';
-import { FlexBox, FlexItem, StyledDivider } from '../../../../utils/ui';
-import { AlignmentTools, FlipTools, GroupObjectTools, LayerTools } from './Static';
+import { CanvasContext } from '@contexts/CanvasContext';
+import { FlexBox, FlexItem, StyledDivider } from '@utils/ui';
+import { AlignmentTools, FlipTools, GroupObjectTools, LayerTools } from '@components/Editor/Drawers/Tools/Static';
 
 export const StaticTools: FC = () => {
   const { state: { selectedObject, isActiveSelection, canvasHandler, isInCroppingMode }, dispatch } = useContext(CanvasContext);

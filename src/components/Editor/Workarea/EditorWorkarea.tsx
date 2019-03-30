@@ -3,8 +3,8 @@ import { fabric } from 'fabric';
 import React, { FC, MutableRefObject, useContext, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { defaultCanvasOptions, defaultWorkareaOptions } from '../../../constants';
-import { CanvasContext, EditorContext } from '../../../contexts';
-import { FabricObjectBuilder } from '../../../utils/fabric';
+import { CanvasContext, EditorContext } from '@contexts/index';
+import { FabricObjectBuilder } from '@utils/fabric';
 
 const StyledLayoutContent = styled(Layout.Content)`
   background-color: #f0f2f4;
@@ -58,7 +58,9 @@ export const EditorWorkarea: FC = () => {
       editorCtxDispatcher({ type: 'SET_WORKAREA', payload: { workarea } });
     } else {
       editorCtxState.fabricCanvas.setWidth(editorCtxState.canvasWidth).setHeight(editorCtxState.canvasHeight);
-      canvasCtxState.canvasHandler.resetWorkareaDimension(600, 400);
+      const scaleRatio = canvasCtxState.canvasHandler.calculateScaleRatio(600, 400);
+      canvasCtxDispatcher({type: "SET_SCALE_FACTOR", payload: {scaleFactor: scaleRatio}});
+      canvasCtxState.canvasHandler.resetWorkareaDimension(600, 400, scaleRatio);
       editorCtxDispatcher({ type: 'SET_FABRIC_CANVAS', payload: { fabricCanvas: editorCtxState.fabricCanvas } });
       setupFabricListeners();
     }
@@ -103,7 +105,9 @@ export const EditorWorkarea: FC = () => {
 
   const handleSelection = (event: fabric.IEvent) => {
     if (event['deselected'] && !event['selected']) {
-      canvasCtxState.canvasHandler.removeCroppingRect();
+      if (canvasCtxState.isInCroppingMode) {
+        canvasCtxState.canvasHandler.removeCroppingRect();
+      }
       canvasCtxDispatcher({ type: 'CLEAR_SELECTION' });
     } else if (event.target.isType('activeSelection')) {
       canvasCtxState.canvasHandler.removeBackgroundImageFromActiveObjects();

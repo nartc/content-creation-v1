@@ -1,9 +1,9 @@
 import React, { FC, memo } from 'react';
-import { ReactComponent as Duplicate } from '../../../../../icons/group-object/duplicate.svg';
-import { ReactComponent as Grouping } from '../../../../../icons/group-object/group.svg';
-import { ReactComponent as Ungrouping } from '../../../../../icons/group-object/ungroup.svg';
-import { arePropsEqual } from '../../../../../utils/arePropsEqual';
-import { IToolWithProps, ToolIcon, ToolWrapper } from '../../../../../utils/ui/Ant';
+import { ReactComponent as Duplicate } from '@customIcons/group-object/duplicate.svg';
+import { ReactComponent as Grouping } from '@customIcons/group-object/group.svg';
+import { ReactComponent as Ungrouping } from '@customIcons/group-object/ungroup.svg';
+import { arePropsEqual } from '@utils/arePropsEqual';
+import { IToolWithProps, ToolIcon, ToolWrapper } from '@utils/ui';
 
 interface IGroupObjectToolsProps extends IToolWithProps {
   shouldGroupingDisabled: boolean;

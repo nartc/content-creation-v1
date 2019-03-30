@@ -1,13 +1,13 @@
 import React, { FC, memo } from 'react';
-import { ReactComponent as HorizontalBottom } from '../../../../../icons/aligning/horizontal-bottom.svg';
-import { ReactComponent as HorizontalCenter } from '../../../../../icons/aligning/horizontal-center.svg';
-import { ReactComponent as HorizontalTop } from '../../../../../icons/aligning/horizontal-top.svg';
-import { ReactComponent as VerticalCenter } from '../../../../../icons/aligning/vertical-center.svg';
-import { ReactComponent as VerticalLeft } from '../../../../../icons/aligning/vertical-left.svg';
-import { ReactComponent as VerticalRight, } from '../../../../../icons/aligning/vertical-right.svg';
-import { arePropsEqual } from '../../../../../utils/arePropsEqual';
-import { AlignmentType } from '../../../../../utils/fabric';
-import { IToolWithProps, ToolIcon, ToolWrapper } from '../../../../../utils/ui/Ant';
+import { ReactComponent as HorizontalBottom } from '@customIcons/aligning/horizontal-bottom.svg';
+import { ReactComponent as HorizontalCenter } from '@customIcons/aligning/horizontal-center.svg';
+import { ReactComponent as HorizontalTop } from '@customIcons/aligning/horizontal-top.svg';
+import { ReactComponent as VerticalCenter } from '@customIcons/aligning/vertical-center.svg';
+import { ReactComponent as VerticalLeft } from '@customIcons/aligning/vertical-left.svg';
+import { ReactComponent as VerticalRight, } from '@customIcons/aligning/vertical-right.svg';
+import { arePropsEqual } from '@utils/arePropsEqual';
+import { AlignmentType } from '@utils/fabric';
+import { IToolWithProps, ToolIcon, ToolWrapper } from '@utils/ui';
 
 interface IAlignmentToolsProps extends IToolWithProps {
   shouldDisabled: boolean;

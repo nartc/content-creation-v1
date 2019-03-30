@@ -1,8 +1,8 @@
 import { Button, Popover } from 'antd';
 import React, { FC, memo } from 'react';
 import { ColorResult, SketchPicker } from 'react-color';
-import { arePropsEqual } from '../../../../../../utils/arePropsEqual';
-import { IToolWithProps, ToolWrapper } from '../../../../../../utils/ui/Ant';
+import { arePropsEqual } from '@utils/arePropsEqual';
+import { IToolWithProps, ToolWrapper } from '@utils/ui';
 
 interface IFillToolProps extends IToolWithProps {
   fill: string;

@@ -1,8 +1,7 @@
 import { Input, Typography } from 'antd';
 import React, { FC, useContext, useMemo, useRef } from 'react';
-import { CanvasContext, EditorContext } from '../../../../../../contexts';
-import { displayInfo, FlexBox, FlexItem, TooltipWrapper } from '../../../../../../utils/ui';
-import { ToolWrapper } from '../../../../../../utils/ui/Ant';
+import { CanvasContext, EditorContext } from '@contexts/index';
+import { ToolWrapper, displayInfo, FlexBox, FlexItem, TooltipWrapper  } from '@utils/ui';
 
 export const CanvasSizeTools: FC = () => {
   const { state: { workareaWidth, workareaHeight }, dispatch: editorCtxDispatcher } = useContext(EditorContext);
