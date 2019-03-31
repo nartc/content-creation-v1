@@ -14,6 +14,7 @@ export class CanvasHandler {
 
   private initialViewportTransform = [1, 0, 0, 1, 0, 0];
   private workareaBackground: fabric.Image;
+  private croppingImage: fabric.Image;
   private croppingRect: fabric.Rect;
   private croppingRectAfterModifed: fabric.Rect;
 
@@ -82,43 +83,41 @@ export class CanvasHandler {
     this.workareaBackground = image;
   };
 
-  initializeWorkareaBackgroundCropping = () => {
-    if (!this.workareaBackground) {
+  initializeCroppingRect = () => {
+    if (!this.activeObject.isType('image')) {
       return;
     }
 
     this.croppingRectAfterModifed = null;
     this.croppingRect = FabricObjectBuilder().rect(null, {
-      top: this._workarea.top,
-      left: this._workarea.left,
-      width: this._workarea.width,
-      height: this._workarea.height,
-      scaleX: this._workarea.scaleX,
-      scaleY: this._workarea.scaleY,
+      top: this.activeObject.top,
+      left: this.activeObject.left,
+      width: this.activeObject.width,
+      height: this.activeObject.height,
+      scaleX: this.activeObject.scaleX,
+      scaleY: this.activeObject.scaleY,
       ...defaultCroppingRectOptions
     });
 
     this.croppingRect.clone(cloned => {
       this.croppingRectAfterModifed = cloned;
       this.addObject(this.croppingRect);
+      this.croppingImage = this.activeObject as fabric.Image;
+      this.croppingImage.set('selectable', false);
       this.fabricCanvas.setActiveObject(this.croppingRect);
-      this.workareaBackground.set('selectable', false);
     });
   };
 
   removeCroppingRect = () => {
-    if (!this.workareaBackground) {
-      return;
-    }
-
+    console.log('test');
     this.removeObject(this.croppingRect);
-    this.workareaBackground.set('selectable', true);
+    this.croppingImage.set('selectable', true);
     this.croppingRect = null;
     this.croppingRectAfterModifed = null;
   };
 
   handleCroppingRectBoundings = (isScaling: boolean, isMoving: boolean) => {
-    const { left, top, width, height } = this.workarea.getBoundingRect(true, true);
+    const { left, top, width, height } = this.croppingImage.getBoundingRect(true, true);
     const { left: objectLeft, top: objectTop, width: objectWidth, height: objectHeight } = this.activeObject.getBoundingRect(true, true);
 
 
@@ -413,6 +412,30 @@ export class CanvasHandler {
 
     this.fabricCanvas.discardActiveObject();
     this.render(true);
+  };
+
+  cropImage = () => {
+    if (!this.croppingRect) {
+      return;
+    }
+
+    if (!this.activeObject.isType('image')) {
+      return;
+    }
+
+    // Cropping Workarea Background; Should reset workarea size after cropping
+    if (this.activeObject.name === 'workareaBackground') {
+      const { left, top, width, height } = this.croppingRect.getBoundingRect(true, true);
+
+      this.activeObject.set({
+        top, left, width, height
+      });
+      this.workareaBackground = this.activeObject as fabric.Image;
+
+      const scaleRatio = this.calculateScaleRatio(width, height);
+      this.resetWorkareaDimension(width, height, scaleRatio);
+      this.removeCroppingRect()
+    }
   };
 
   zoom = (delta: number, mousePosition: fabric.Point) => {

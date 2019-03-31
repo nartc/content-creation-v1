@@ -10,7 +10,7 @@ interface IImageToolsProps extends IToolWithProps {
 
 export const ImageTools: FC<IImageToolsProps> = memo(({ canvasHandler, canvasContextDispatcher, shouldSetBackgroundDisabled }) => {
   const onCropClickHandler = () => {
-    canvasHandler.initializeWorkareaBackgroundCropping();
+    canvasHandler.initializeCroppingRect();
     canvasContextDispatcher({
       type: 'SET_IS_IN_CROPPING_MODE',
       payload: { isInCroppingMode: canvasHandler.isInCroppingMode }

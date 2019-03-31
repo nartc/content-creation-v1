@@ -1,8 +1,8 @@
-import { CanvasContext, EditorContext } from '@contexts/index';
+import { CanvasContext, EditorContext, IEditorContextReducerActions, IEditorContextState } from '@contexts/index';
 import { FabricObjectBuilder } from '@utils/fabric';
 import { Layout } from 'antd';
 import { fabric } from 'fabric';
-import React, { FC, MutableRefObject, useContext, useEffect, useRef } from 'react';
+import React, { Dispatch, FC, MutableRefObject, ReducerAction, useContext, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { defaultCanvasOptions, defaultWorkareaOptions } from '../../../constants';
 
@@ -41,36 +41,28 @@ export const EditorWorkarea: FC = () => {
   const { state: editorCtxState, dispatch: editorCtxDispatcher } = useCanvasDimension(containerRef);
 
   /**
-   * Contexts
+   * Canvas Effect
    */
-  const { state: canvasCtxState, dispatch: canvasCtxDispatcher } = useContext(CanvasContext);
+  const { state: canvasCtxState, dispatch: canvasCtxDispatcher } = useFabricCanvas(editorCtxState, editorCtxDispatcher, canvasRef);
 
+  /**
+   * Fabric Listener
+   */
   useEffect(() => {
-    if (!editorCtxState.fabricCanvas) {
-      const canvas = new fabric.Canvas(canvasRef.current, { ...defaultCanvasOptions });
-      const workarea = new fabric.Rect({
-        ...defaultWorkareaOptions,
-        width: editorCtxState.workareaWidth,
-        height: editorCtxState.workareaHeight
-      });
-      canvas.add(workarea);
-      editorCtxDispatcher({ type: 'SET_FABRIC_CANVAS', payload: { fabricCanvas: canvas } });
-      editorCtxDispatcher({ type: 'SET_WORKAREA', payload: { workarea } });
-    } else {
-      editorCtxState.fabricCanvas.setWidth(editorCtxState.canvasWidth).setHeight(editorCtxState.canvasHeight);
-      const scaleRatio = canvasCtxState.canvasHandler.calculateScaleRatio(600, 400);
-      canvasCtxDispatcher({ type: 'SET_SCALE_FACTOR', payload: { scaleFactor: scaleRatio } });
-      canvasCtxState.canvasHandler.resetWorkareaDimension(600, 400, scaleRatio);
-      editorCtxDispatcher({ type: 'SET_FABRIC_CANVAS', payload: { fabricCanvas: editorCtxState.fabricCanvas } });
+    if (editorCtxState.fabricCanvas) {
       setupFabricListeners();
     }
 
     return () => {
       if (editorCtxState.fabricCanvas) {
-        editorCtxState.fabricCanvas.off();
+        editorCtxState.fabricCanvas.off({
+          'selection:created': handleSelection,
+          'selection:cleared': handleSelection,
+          'selection:updated': handleSelection,
+        });
       }
     };
-  }, [editorCtxState.canvasWidth, editorCtxState.canvasHeight]);
+  }, [canvasCtxState]);
 
   /**
    * Canvas Handlers
@@ -205,7 +197,7 @@ export const EditorWorkarea: FC = () => {
                          onDrag={event => {
                            event.preventDefault();
                          }}>
-          <canvas ref={canvasRef}/>
+          <canvas ref={canvasRef} />
         </EditorContainer>
       </EditorWrapper>
     </StyledLayoutContent>
@@ -224,4 +216,34 @@ const useCanvasDimension = (containerRef: MutableRefObject<HTMLDivElement>) => {
   }, [context.state.canvasWidth, context.state.canvasHeight]);
 
   return context;
+};
+
+const useFabricCanvas = (
+  editorCtxState: IEditorContextState,
+  editorCtxDispatcher: Dispatch<ReducerAction<(state: IEditorContextState, action: IEditorContextReducerActions) => Partial<IEditorContextState>>>,
+  canvasRef: MutableRefObject<HTMLCanvasElement>
+) => {
+  const {state, dispatch} = useContext(CanvasContext);
+
+  useEffect(() => {
+    if (!editorCtxState.fabricCanvas) {
+      const canvas = new fabric.Canvas(canvasRef.current, { ...defaultCanvasOptions });
+      const workarea = new fabric.Rect({
+        ...defaultWorkareaOptions,
+        width: editorCtxState.workareaWidth,
+        height: editorCtxState.workareaHeight
+      });
+      canvas.add(workarea);
+      editorCtxDispatcher({ type: 'SET_FABRIC_CANVAS', payload: { fabricCanvas: canvas } });
+      editorCtxDispatcher({ type: 'SET_WORKAREA', payload: { workarea } });
+    } else {
+      editorCtxState.fabricCanvas.setWidth(editorCtxState.canvasWidth).setHeight(editorCtxState.canvasHeight);
+      const scaleRatio = state.canvasHandler.calculateScaleRatio(600, 400);
+      dispatch({ type: 'SET_SCALE_FACTOR', payload: { scaleFactor: scaleRatio } });
+      state.canvasHandler.resetWorkareaDimension(600, 400, scaleRatio);
+      editorCtxDispatcher({ type: 'SET_FABRIC_CANVAS', payload: { fabricCanvas: editorCtxState.fabricCanvas } });
+    }
+  }, [editorCtxState.canvasWidth, editorCtxState.canvasHeight]);
+
+  return {state, dispatch};
 };
